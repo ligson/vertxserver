@@ -7,6 +7,13 @@
     <groupId>org.ligson</groupId>
     <artifactId>vertxserver</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <!-- Inherit defaults from Spring Boot -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.1.RELEASE</version>
+    </parent>
+
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/io.vertx/vertx-core -->
@@ -26,7 +33,19 @@
             <artifactId>httpclient</artifactId>
             <version>4.5.6</version>
         </dependency>
-
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>25.1-jre</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -39,9 +58,11 @@
                     <showWarnings>true</showWarnings>
                 </configuration>
             </plugin>
-
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
         </plugins>
-
 
     </build>
 </project>
